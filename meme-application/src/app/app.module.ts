@@ -5,12 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 import { FooterComponent } from './core/footer/footer.component';
+import { MainContainerComponent } from './main-container/main-container.component';
+import { MemeGridComponent } from './main-container/meme-grid/meme-grid.component';
+import { MemeCardComponent } from './main-container/meme-grid/meme-card/meme-card.component';
+import { CreateMemeComponent } from './main-container/create-meme/create-meme.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
+    MainContainerComponent,
+    MemeGridComponent,
+    MemeCardComponent,
+    CreateMemeComponent
   ],
   imports: [
     BrowserModule,
