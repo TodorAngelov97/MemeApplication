@@ -1,0 +1,35 @@
+.container {
+    background-color: #F0F0F0;
+    max-width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: #3399ff;
+}
+
+.logo {
+    float: left;
+}
+
+.logo a {
+    color: black;
+}
+
+li a:hover {
+    background-color: #FFFF99;
+}
