@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { MEMES } from '../../mock-memes';
 
+
+
 // import {MemeService} from '../../services/meme.service'
 
 @Component({
@@ -10,7 +12,7 @@ import { MEMES } from '../../mock-memes';
   styleUrls: ['./meme-grid.component.scss']
 })
 export class MemeGridComponent implements OnInit {
-
+  searchText: string;
   memes = MEMES;
   constructor() { }
 

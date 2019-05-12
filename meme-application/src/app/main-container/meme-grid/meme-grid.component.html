@@ -1,3 +1,12 @@
-<div class="card-columns">
-    <app-meme-card *ngFor="let meme of memes" [meme]="meme"> </app-meme-card>
+<div class="container">
+
+
+    <div>
+        <input class="form-control" type="search" [(ngModel)]="searchText" placeholder="Serach memes..." />
+
+    </div>
+
+    <div class="card-columns">
+        <app-meme-card *ngFor="let meme of memes | filter: searchText" [meme]="meme"> </app-meme-card>
+    </div>
 </div>
