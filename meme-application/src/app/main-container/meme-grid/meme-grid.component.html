@@ -1,8 +1,22 @@
 <div class="container">
 
 
-    <div>
+    <div class="lead-line">
+
+        <!-- class="form-control" -->
+
         <input class="form-control" type="search" [(ngModel)]="searchText" placeholder="Serach memes..." />
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Meme per Page:
+                </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">6</a>
+                <a class="dropdown-item" href="#">12</a>
+                <a class="dropdown-item" href="#">18</a>
+            </div>
+        </div>
 
     </div>
 
