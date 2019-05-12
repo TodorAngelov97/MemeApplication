@@ -13,3 +13,5 @@ export const MEMES: Meme[] = [
     { id: 8, title: ' Sq si', imagePath: 'https://memegenerator.net/img/instances/67684217.jpg' },
     { id: 9, title: ' Nqma kak', imagePath: 'https://media2.giphy.com/media/Hlc2TPGlDYZFK/source.gif' }
 ];
+
+

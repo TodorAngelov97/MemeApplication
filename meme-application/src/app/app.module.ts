@@ -9,6 +9,7 @@ import { MainContainerComponent } from './main-container/main-container.componen
 import { MemeGridComponent } from './main-container/meme-grid/meme-grid.component';
 import { MemeCardComponent } from './main-container/meme-grid/meme-card/meme-card.component';
 import { CreateMemeComponent } from './main-container/create-meme/create-meme.component';
+import { EditMemeComponent } from './main-container/edit-meme/edit-meme.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CreateMemeComponent } from './main-container/create-meme/create-meme.co
     MainContainerComponent,
     MemeGridComponent,
     MemeCardComponent,
-    CreateMemeComponent
+    CreateMemeComponent,
+    EditMemeComponent
   ],
   imports: [
     BrowserModule,

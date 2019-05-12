@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MEMES } from '../../mock-memes';
+
+// import {MemeService} from '../../services/meme.service'
+
 @Component({
   selector: 'app-meme-grid',
   templateUrl: './meme-grid.component.html',
