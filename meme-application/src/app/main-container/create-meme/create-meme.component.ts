@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { Meme } from '../../models/meme.model';
 
 @Component({
   selector: 'app-create-meme',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateMemeComponent implements OnInit {
 
+  memeForm = new FormGroup({
+    title: new FormControl(''),
+    image: new FormControl(''),
+  });
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSubmit() {
+
+
+  }
 }

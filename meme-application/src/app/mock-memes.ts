@@ -15,3 +15,8 @@ export const MEMES: Meme[] = [
 ];
 
 
+
+
+function addMeme(meme: Meme) {
+    MEMES.push(meme);
+}

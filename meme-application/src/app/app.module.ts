@@ -11,7 +11,7 @@ import { MemeCardComponent } from './main-container/meme-grid/meme-card/meme-car
 import { CreateMemeComponent } from './main-container/create-meme/create-meme.component';
 import { EditMemeComponent } from './main-container/edit-meme/edit-meme.component';
 import { FilterPipe } from './pipes/filter.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
