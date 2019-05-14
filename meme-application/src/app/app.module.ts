@@ -14,6 +14,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ExploreComponent } from './main-container/explore/explore.component';
+import { ExploreCardComponent } from './main-container/explore/explore-card/explore-card.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
     MemeCardComponent,
     CreateMemeComponent,
     EditMemeComponent,
-    FilterPipe
+    FilterPipe,
+    ExploreComponent,
+    ExploreCardComponent
   ],
   imports: [
     BrowserModule,

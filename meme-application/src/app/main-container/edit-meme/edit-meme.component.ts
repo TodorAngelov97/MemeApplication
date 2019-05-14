@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MemeService } from '../../services/meme.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-meme',
@@ -12,7 +13,7 @@ export class EditMemeComponent implements OnInit {
   title: string;
   file: File;
   id;
-  constructor(private memeService: MemeService, private route: ActivatedRoute) { }
+  constructor(private memeService: MemeService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
@@ -32,7 +33,8 @@ export class EditMemeComponent implements OnInit {
     this.memeService.updateMeme(formData, this.id);
   }
   resetForm() {
-    this.title = ' ';
-    this.file = null;
+    this.router.navigateByUrl('');
+    // this.title = ' ';
+    // this.file = null;
   }
 }
