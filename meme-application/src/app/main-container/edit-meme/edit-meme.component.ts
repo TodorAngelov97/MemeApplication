@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Meme } from '../../models/meme.model';
-import { HttpClient } from '@angular/common/http';
-
-
+import { ActivatedRoute } from '@angular/router';
+import { MemeService } from '../../services/meme.service';
 
 @Component({
   selector: 'app-edit-meme',
@@ -11,28 +8,31 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./edit-meme.component.scss']
 })
 export class EditMemeComponent implements OnInit {
-  memeForm: FormGroup;
   url = 'http://localhost:8080';
-
-
-  constructor(private http: HttpClient) { }
-
-  // createMemeForm() {
-  //   return new FormGroup({
-  //     title: new FormControl('', [Validators.required]),
-  //     image: new FormControl('', [Validators.required]),
-  //   });
-  // }
-
-
+  title: string;
+  file: File;
+  id;
+  constructor(private memeService: MemeService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.id = this.route.snapshot.paramMap.get('id');
+    console.log(this.id);
   }
 
 
+  fileChanged(event) {
+    this.file = event.target.files[0];
+  }
 
-
-
+  onSubmit() {
+    console.log('update');
+    const formData = new FormData();
+    formData.append('title', this.title);
+    formData.append('file', this.file);
+    this.memeService.updateMeme(formData, this.id);
+  }
+  resetForm() {
+    this.title = ' ';
+    this.file = null;
+  }
 }
-
-

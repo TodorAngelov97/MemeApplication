@@ -18,4 +18,13 @@ export class MemeService {
     return this.http.post<Meme>(this.url + '/kurec', formData).subscribe();
   }
 
+  updateMeme(formData: FormData, id: number) {
+    return this.http.post<Meme>(this.url + '/kurec', formData).subscribe();
+  }
+
+  deleteMeme(id: number) {
+    const deleteUrl = this.url + '/card/' + id;
+    console.log('evala');
+    return this.http.delete(deleteUrl).subscribe();
+  }
 }

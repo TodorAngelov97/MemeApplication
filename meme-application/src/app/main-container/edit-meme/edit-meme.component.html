@@ -2,16 +2,15 @@
 
 <h2>Edit Meme</h2>
 
-<form>
-
+<form (submit)="onSubmit(); resetForm()">
     <div class="form-group ">
         <label for="title ">Title</label>
-        <input class="form-control " id="title " placeholder="Like...seriously??? ">
+        <input type="text" id="title" [(ngModel)]="title" [ngModelOptions]="{standalone: true}" placeholder="Like...seriously??? ">
 
         <label for="image ">Image</label>
-        <input type="file" class="form-control-file" id="image ">
+        <input type="file" (change)="fileChanged($event)">
 
-        <button type="submit " class="btn btn-primary ">Edit</button>
+        <button type=" submit " class="btn btn-primary ">Edit</button>
 
     </div>
 
