@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Domain } from '../../models/domain.model';
+import { DomainService } from '../../services/domain.service';
 
 @Component({
   selector: 'app-explore',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExploreComponent implements OnInit {
 
-  constructor() { }
+  domains: Domain[];
+
+  constructor(private domainService: DomainService) { }
 
   ngOnInit() {
+    this.getDomains();
+  }
+
+  getDomains(): void {
+    this.domainService.getDomains().subscribe(domains => this.domains = domains);
   }
 
 }

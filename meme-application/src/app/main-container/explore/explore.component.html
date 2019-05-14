@@ -1,3 +1,8 @@
-<p>
-  explore works!
-</p>
+<div>
+    <h4>Sele</h4>
+    <select class="browser-default custom-select custom-select-lg mb-3">
+      <option *ngFor="let domain of domains" [ngValue]="domain.name">
+        {{domain.name}}
+    </option> 
+    </select>
+</div>
