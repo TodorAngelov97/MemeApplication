@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MEMES } from '../../mock-memes';
+import { MemeService } from '../../services/meme.service';
+import { Meme } from '../../models/meme.model';
 
 
-
-// import {MemeService} from '../../services/meme.service'
+//  import {MemeService} from '../../services/meme.service'
 
 @Component({
   selector: 'app-meme-grid',
@@ -13,10 +14,16 @@ import { MEMES } from '../../mock-memes';
 })
 export class MemeGridComponent implements OnInit {
   searchText: string;
-  memes = MEMES;
-  constructor() { }
+  memes: Meme[];
+  constructor(private memeService: MemeService) { }
 
   ngOnInit() {
+    this.getMemes();
+    // this.memes = MEMES;
+  }
+
+  getMemes(): void {
+    this.memeService.getMemes().subscribe(memes => this.memes = memes);
   }
 
 }

@@ -1,4 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Meme } from '../../models/meme.model';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -8,14 +11,28 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./edit-meme.component.scss']
 })
 export class EditMemeComponent implements OnInit {
+  memeForm: FormGroup;
+  url = 'http://localhost:8080';
 
 
-  constructor() {
-  }
+  constructor(private http: HttpClient) { }
+
+  // createMemeForm() {
+  //   return new FormGroup({
+  //     title: new FormControl('', [Validators.required]),
+  //     image: new FormControl('', [Validators.required]),
+  //   });
+  // }
+
+
 
   ngOnInit() {
   }
 
 
 
+
+
 }
+
+

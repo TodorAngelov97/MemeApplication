@@ -1,5 +1,6 @@
 export class Meme {
     id: number;
     title: string;
-    imagePath: string;
+    // tslint:disable-next-line: variable-name
+    image_name: string;
 }

@@ -9,30 +9,47 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./create-meme.component.scss']
 })
 export class CreateMemeComponent implements OnInit {
-  constructor(private http: HttpClient) { }
 
   memeForm: FormGroup;
-  url: String = 'http://localhost:8080';
-  createMemeForm() {
-    return new FormGroup({
-      title: new FormControl('', [Validators.required]),
-      image: new FormControl('', [Validators.required]),
-    });
-  }
+  url = 'http://localhost:8080';
+  file2;
+  playerName: string;
+  file: File;
 
-
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.memeForm = this.createMemeForm();
+    // this.memeForm = this.createMemeForm();
+  }
+
+  // createMemeForm() {
+  //   return new FormGroup({
+  //     title: new FormControl('', [Validators.required]),
+  //     file: new FormControl('', [Validators.required]),
+  //   });
+  // }
+
+  fileChanged(event) {
+    this.file = event.target.files[0];
   }
 
   onSubmit() {
 
+    console.log('Data');
     const formData = new FormData();
-    formData.append('title', this.memeForm.get('title').value);
-    formData.append('file', this.memeForm.get('image').value);
+    formData.append('title', this.playerName);
+    formData.append('file', this.file);
+    // formData.append('title', this.memeForm.get('title').value);
+    // this.file2 = this.memeForm.get('file');
+    // console.log(this.file2.value);
+    // formData.append('file', this.memeForm.get('file').value);
+
 
     return this.http.post<Meme>(this.url + '/kurec', formData).subscribe();
 
+  }
+  resetForm() {
+    this.playerName = ' ';
+    this.file = null;
   }
 }
