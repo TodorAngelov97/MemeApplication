@@ -19,7 +19,8 @@ export class MemeService {
   }
 
   updateMeme(formData: FormData, id: number) {
-    return this.http.post<Meme>(this.url + '/kurec', formData).subscribe();
+    return this.http.put<Meme>(this.url + '/card/' + id, formData).subscribe();
+    // return this.http.post<Meme>(this.url + '/kurec', formData).subscribe();
   }
 
   deleteMeme(id: number) {
