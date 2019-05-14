@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Meme } from '../../models/meme.model';
 import { HttpClient } from '@angular/common/http';
+import { MemeService } from '../../services/meme.service';
 
 @Component({
   selector: 'app-create-meme',
@@ -12,11 +13,10 @@ export class CreateMemeComponent implements OnInit {
 
   memeForm: FormGroup;
   url = 'http://localhost:8080';
-  file2;
   playerName: string;
   file: File;
 
-  constructor(private http: HttpClient) { }
+  constructor(private memeService: MemeService) { }
 
   ngOnInit() {
     // this.memeForm = this.createMemeForm();
@@ -43,9 +43,8 @@ export class CreateMemeComponent implements OnInit {
     // this.file2 = this.memeForm.get('file');
     // console.log(this.file2.value);
     // formData.append('file', this.memeForm.get('file').value);
+    this.memeService.addMeme(formData);
 
-
-    return this.http.post<Meme>(this.url + '/kurec', formData).subscribe();
 
   }
   resetForm() {

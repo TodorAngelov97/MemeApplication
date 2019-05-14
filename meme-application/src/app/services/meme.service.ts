@@ -14,4 +14,8 @@ export class MemeService {
     return this.http.get<Meme[]>(this.url + '/card');
   }
 
+  addMeme(formData: FormData) {
+    return this.http.post<Meme>(this.url + '/kurec', formData).subscribe();
+  }
+
 }
