@@ -1,8 +1,13 @@
 <div>
-    <h4>Sele</h4>
-    <select class="browser-default custom-select custom-select-lg mb-3">
-      <option *ngFor="let domain of domains" [ngValue]="domain.name">
+    <!-- (change)="getMemes($event.target.value)" -->
+    <select class="browser-default custom-select custom-select-lg mb-3" (change)="getMemes($event.target.value)">
+        <option value="" disabled selected>Choose your memelt</option>
+        <option  *ngFor="let domain of domains" >
         {{domain.name}}
     </option> 
     </select>
+
+    <div class="card-columns">
+        <app-explore-card *ngFor="let meme of memes" [meme]="meme"></app-explore-card>
+    </div>
 </div>

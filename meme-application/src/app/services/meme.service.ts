@@ -7,24 +7,24 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class MemeService {
 
-  url = 'http://localhost:8080';
+  url = '/';
   constructor(private http: HttpClient) { }
 
   getMemes() {
-    return this.http.get<Meme[]>(this.url + '/card');
+    return this.http.get<Meme[]>(this.url + 'card');
   }
 
   addMeme(formData: FormData) {
-    return this.http.post<Meme>(this.url + '/kurec', formData).subscribe();
+    return this.http.post<Meme>(this.url + 'kurec', formData).subscribe();
   }
 
   updateMeme(formData: FormData, id: number) {
-    return this.http.put<Meme>(this.url + '/card/' + id, formData).subscribe();
+    return this.http.put<Meme>(this.url + 'card/' + id, formData).subscribe();
     // return this.http.post<Meme>(this.url + '/kurec', formData).subscribe();
   }
 
   deleteMeme(id: number) {
-    const deleteUrl = this.url + '/card/' + id;
+    const deleteUrl = this.url + 'card/' + id;
     console.log('evala');
     return this.http.delete(deleteUrl).subscribe();
   }
