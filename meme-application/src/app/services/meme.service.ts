@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Meme } from '../models/meme.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +12,13 @@ export class MemeService {
   constructor(private http: HttpClient) { }
 
   getMemes() {
-    return this.http.get<Meme[]>(this.url + 'card');
+    return this.http.get<Meme[]>(this.url + 'meme');
   }
 
 
 
   addMeme(formData: FormData) {
-    return this.http.post<Meme>(this.url + 'kurec', formData);
+    return this.http.post<Meme>(this.url + 'post', formData);
   }
 
   updateMeme(formData: FormData, id: number) {

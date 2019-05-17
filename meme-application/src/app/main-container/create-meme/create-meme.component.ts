@@ -25,7 +25,7 @@ export class CreateMemeComponent implements OnInit {
 
 
 
-  fileChanged(event: any) {
+  fileChanged(event) {
     this.file = event.target.files[0];
   }
 
@@ -40,9 +40,5 @@ export class CreateMemeComponent implements OnInit {
     });
 
 
-  }
-  resetForm() {
-    this.playerName = ' ';
-    this.file = null;
   }
 }

@@ -17,7 +17,7 @@
     </div>
 
     <div class="card-columns">
-        <app-meme-card *ngFor="let meme of memes | filter: searchText | paginate: { itemsPerPage: 10, currentPage: p }" [meme]="meme" (notifyToDeleteMeme)="delete($event)"> </app-meme-card>
+        <app-meme-card *ngFor="let meme of memes | filter: searchText | paginate: { itemsPerPage: 6, currentPage: p }" [meme]="meme" (notifyToDeleteMeme)="delete($event)"> </app-meme-card>
     </div>
 
     <pagination-controls maxSize="4" directionLinks="true" responsive="true" previousLabel="Previous page" nextLabel="Next page" (pageChange)="p=$event"></pagination-controls>

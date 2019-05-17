@@ -4,7 +4,7 @@
         <option  *ngFor="let domain of domains" >
         {{domain.name}}
     </option> 
-    </select> ???
+    </select>
     <form class="form-inline md-form mr-auto mb-4" (submit)="search()">
         <input type="text" id="key" [(ngModel)]="key" [ngModelOptions]="{standalone: true}" placeholder="Like...seriously??? ">
         <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>

@@ -8,10 +8,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DomainService {
 
-  url = 'http://localhost:8080';
+  URL = 'http://localhost:8080';
   constructor(private http: HttpClient) { }
 
   getDomains() {
-    return this.http.get<Domain[]>(this.url + '/domain');
+    return this.http.get<Domain[]>(this.URL + '/domain');
   }
 }

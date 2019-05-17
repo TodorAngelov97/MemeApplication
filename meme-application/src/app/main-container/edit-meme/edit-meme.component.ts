@@ -9,10 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./edit-meme.component.scss']
 })
 export class EditMemeComponent implements OnInit {
-  url = 'http://localhost:8080';
+
   title: string;
   file: File;
-  id;
+  id: any;
   constructor(private memeService: MemeService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
@@ -21,7 +21,7 @@ export class EditMemeComponent implements OnInit {
   }
 
 
-  fileChanged(event) {
+  fileChanged(event: any) {
     this.file = event.target.files[0];
   }
 
