@@ -25,7 +25,7 @@ export class MemeService {
     return this.http.put<Meme>(this.url + 'card/' + id, formData);
   }
 
-  deleteMeme(id: number): Observable<Meme> {
+  deleteMeme(id: number) {
     const deleteUrl = this.url + 'card/' + id;
     console.log('evala');
     return this.http.delete<Meme>(deleteUrl);

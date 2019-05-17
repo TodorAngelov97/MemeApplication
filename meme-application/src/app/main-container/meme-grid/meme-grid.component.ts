@@ -27,16 +27,9 @@ export class MemeGridComponent implements OnInit {
     this.memeService.getMemes().subscribe(memes => this.memes = memes);
   }
 
-
-  delete(id: number): Observable<any> {
-    console.log('delete successfully');
-    return this.memeService.deleteMeme(id);
-    // window.location.reload()
+  delete(e: any) {
+    this.memeService.deleteMeme(e).subscribe(() => this.getMemes());
   }
 
-  getMemesAfterDelete(id: number): void {
-    console.log('second stage');
-    this.delete(id).subscribe(() => this.getMemes());
-  }
 
 }
