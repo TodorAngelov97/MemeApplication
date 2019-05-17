@@ -8,7 +8,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DomainService {
 
-  // url = ' https://meme-it-platform-service-api.herokuapp.com';
   url = 'http://localhost:8080';
   constructor(private http: HttpClient) { }
 

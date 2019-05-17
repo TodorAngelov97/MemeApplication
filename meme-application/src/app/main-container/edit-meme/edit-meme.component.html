@@ -1,8 +1,7 @@
-<!-- <app-meme-card [meme]=getMemeById(id)></app-meme-card> -->
+<h2>
+    Edit Meme</h2>
 
-<h2>Edit Meme</h2>
-
-<form (submit)="onSubmit(); resetForm()">
+<form (submit)="onSubmit()">
     <div class="form-group ">
         <label for="title ">Title</label>
         <input type="text" id="title" [(ngModel)]="title" [ngModelOptions]="{standalone: true}" placeholder="Like...seriously??? ">

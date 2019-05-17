@@ -1,9 +1,7 @@
 <div class="card" style="width: 18rem;">
     <img class="card-img-top" [src]="meme.image" alt="Card image cap">
-    <!-- src="meme.imageSource" -->
     <div class="card-body">
         <h5 class="card-title">{{meme.title}}</h5>
-        <!--{{meme.title}}-->
 
         <div>
             <button type="button" class="btn btn-warning"><a [routerLink]="['/edit-meme',meme.id]">Edit</a></button>

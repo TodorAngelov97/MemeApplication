@@ -22,11 +22,7 @@ export class MemeCardComponent implements OnInit {
 
   }
 
-  // delete(id: number) {
-  //   console.log('delete successfully');
-  //   this.memeService.deleteMeme(id).subscribe();
-  //   // window.location.reload();
-  // }
+
 
   deleteMeme() {
     console.log('ssss');

@@ -55,7 +55,6 @@ export class ExploreComponent implements OnInit {
     console.log('vlizam');
     this.exploreService.searchAdvanced(this.key).subscribe(memes => this.isSuggestion(memes));
     console.log('vlizam2');
-    // this.isSuggestion();
   }
   isSuggestion(memes: Meme[]): Meme[] {
 
@@ -69,7 +68,6 @@ export class ExploreComponent implements OnInit {
         console.log(this.suggestionWord);
       }
     }
-    // console.log(memes.length);
     return memes;
   }
 

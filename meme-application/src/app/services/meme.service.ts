@@ -15,18 +15,19 @@ export class MemeService {
     return this.http.get<Meme[]>(this.url + 'card');
   }
 
+
+
   addMeme(formData: FormData) {
-    return this.http.post<Meme>(this.url + 'kurec', formData).subscribe();
+    return this.http.post<Meme>(this.url + 'kurec', formData);
   }
 
   updateMeme(formData: FormData, id: number) {
-    return this.http.put<Meme>(this.url + 'card/' + id, formData).subscribe();
-    // return this.http.post<Meme>(this.url + '/kurec', formData).subscribe();
+    return this.http.put<Meme>(this.url + 'card/' + id, formData);
   }
 
-  deleteMeme(id: number): Observable<any> {
+  deleteMeme(id: number): Observable<Meme> {
     const deleteUrl = this.url + 'card/' + id;
     console.log('evala');
-    return this.http.delete(deleteUrl);
+    return this.http.delete<Meme>(deleteUrl);
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MEMES } from '../../mock-memes';
+
 import { MemeService } from '../../services/meme.service';
 import { Meme } from '../../models/meme.model';
 import { Observable } from 'rxjs';
@@ -16,11 +16,11 @@ import { Observable } from 'rxjs';
 export class MemeGridComponent implements OnInit {
   searchText: string;
   memes: Meme[];
+  p = 1;
   constructor(private memeService: MemeService) { }
 
   ngOnInit() {
     this.getMemes();
-    // this.memes = MEMES;
   }
 
   getMemes(): void {
@@ -38,4 +38,5 @@ export class MemeGridComponent implements OnInit {
     console.log('second stage');
     this.delete(id).subscribe(() => this.getMemes());
   }
+
 }

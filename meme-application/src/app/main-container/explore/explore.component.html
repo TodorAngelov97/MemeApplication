@@ -1,10 +1,4 @@
 <div>
-
-    <p>
-        sssssssssssssssssssssssssssssssssssssssssssssss ssssssssssssssssssssssssssssssssssssssssss
-
-    </p>
-    <!-- (change)="getMemes($event.target.value)" -->
     <select class="browser-default custom-select custom-select-lg mb-3" (change)="getMemes($event.target.value)">
         <option value="" disabled selected>Choose your memelt</option>
         <option  *ngFor="let domain of domains" >
@@ -13,7 +7,6 @@
     </select> ???
     <form class="form-inline md-form mr-auto mb-4" (submit)="search()">
         <input type="text" id="key" [(ngModel)]="key" [ngModelOptions]="{standalone: true}" placeholder="Like...seriously??? ">
-        <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
         <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
     </form>
 

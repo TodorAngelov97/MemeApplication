@@ -18,6 +18,10 @@ import { ExploreComponent } from './main-container/explore/explore.component';
 import { ExploreCardComponent } from './main-container/explore/explore-card/explore-card.component';
 
 
+import { NgxPaginationModule } from 'ngx-pagination';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +41,8 @@ import { ExploreCardComponent } from './main-container/explore/explore-card/expl
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

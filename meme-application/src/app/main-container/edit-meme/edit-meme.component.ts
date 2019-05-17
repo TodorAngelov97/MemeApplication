@@ -30,11 +30,10 @@ export class EditMemeComponent implements OnInit {
     const formData = new FormData();
     formData.append('title', this.title);
     formData.append('file', this.file);
-    this.memeService.updateMeme(formData, this.id);
+    this.memeService.updateMeme(formData, this.id).subscribe(
+      data => {
+        return this.router.navigate(['']);
+      });
   }
-  resetForm() {
-    this.router.navigateByUrl('');
-    // this.title = ' ';
-    // this.file = null;
-  }
+
 }

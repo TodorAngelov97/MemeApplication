@@ -15,8 +15,8 @@ export class ExploreService {
   }
 
   searchAdvanced(key: string) {
-    const url = 'http://localhost:8080';
-    const requestUrl = url + '/advanced-search/ ' + key;
+    const URL = 'http://localhost:8080';
+    const requestUrl = URL + '/advanced-search/ ' + key;
     return this.http.get<Meme[]>(requestUrl);
   }
 

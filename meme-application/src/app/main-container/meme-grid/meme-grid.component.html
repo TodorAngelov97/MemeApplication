@@ -1,9 +1,5 @@
-inside
 <div class="container">
-    sss
     <div class="lead-line">
-
-        <!-- class="form-control" -->
 
         <input class="form-control" type="search" [(ngModel)]="searchText" placeholder="Serach memes..." />
 
@@ -21,6 +17,8 @@ inside
     </div>
 
     <div class="card-columns">
-        <app-meme-card *ngFor="let meme of memes | filter: searchText" [meme]="meme" (memeDelete)="getMemesAfterDelete($event)"> </app-meme-card>
+        <app-meme-card *ngFor="let meme of memes | filter: searchText | paginate: { itemsPerPage: 10, currentPage: p }" [meme]="meme" (memeDelete)="getMemesAfterDelete($event)"> </app-meme-card>
     </div>
+
+    <pagination-controls maxSize="4" directionLinks="true" responsive="true" previousLabel="Previous page" nextLabel="Next page" (pageChange)="p=$event"></pagination-controls>
 </div>

@@ -3,6 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Meme } from '../../models/meme.model';
 import { HttpClient } from '@angular/common/http';
 import { MemeService } from '../../services/meme.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-create-meme',
@@ -16,20 +18,14 @@ export class CreateMemeComponent implements OnInit {
   playerName: string;
   file: File;
 
-  constructor(private memeService: MemeService) { }
+  constructor(private memeService: MemeService, private router: Router) { }
 
   ngOnInit() {
-    // this.memeForm = this.createMemeForm();
   }
 
-  // createMemeForm() {
-  //   return new FormGroup({
-  //     title: new FormControl('', [Validators.required]),
-  //     file: new FormControl('', [Validators.required]),
-  //   });
-  // }
 
-  fileChanged(event) {
+
+  fileChanged(event: any) {
     this.file = event.target.files[0];
   }
 
@@ -39,11 +35,9 @@ export class CreateMemeComponent implements OnInit {
     const formData = new FormData();
     formData.append('title', this.playerName);
     formData.append('file', this.file);
-    // formData.append('title', this.memeForm.get('title').value);
-    // this.file2 = this.memeForm.get('file');
-    // console.log(this.file2.value);
-    // formData.append('file', this.memeForm.get('file').value);
-    this.memeService.addMeme(formData);
+    this.memeService.addMeme(formData).subscribe(data => {
+      return this.router.navigate(['']);
+    });
 
 
   }
