@@ -3,7 +3,7 @@ import { Domain } from '../../models/domain.model';
 import { Meme } from '../../models/meme.model';
 import { DomainService } from '../../services/domain.service';
 import { ExploreService } from '../../services/explore.service';
-import { stringify } from '@angular/core/src/util';
+import { TouchSequence } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-explore',
@@ -15,11 +15,14 @@ export class ExploreComponent implements OnInit {
   domains: Domain[];
   memes: Meme[];
   address: string;
-
+  key: string;
+  suggestionWord: string;
+  noMatches: boolean;
   constructor(private domainService: DomainService, private exploreService: ExploreService) { }
 
   ngOnInit() {
     this.getDomains();
+    this.noMatches = false;
   }
 
   getDomains(): void {
@@ -48,5 +51,26 @@ export class ExploreComponent implements OnInit {
     return ' ';
   }
 
+  search(): void {
+    console.log('vlizam');
+    this.exploreService.searchAdvanced(this.key).subscribe(memes => this.isSuggestion(memes));
+    console.log('vlizam2');
+    // this.isSuggestion();
+  }
+  isSuggestion(memes: Meme[]): Meme[] {
+
+    if (memes.length === 0 || memes.length === 1) {
+      console.log('forst');
+      if (memes[0].image === 'empty') {
+        console.log('secod');
+        this.suggestionWord = memes[0].title;
+        this.memes = null;
+        this.noMatches = true;
+        console.log(this.suggestionWord);
+      }
+    }
+    // console.log(memes.length);
+    return memes;
+  }
 
 }

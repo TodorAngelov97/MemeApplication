@@ -21,6 +21,6 @@ inside
     </div>
 
     <div class="card-columns">
-        <app-meme-card *ngFor="let meme of memes | filter: searchText" [meme]="meme"> </app-meme-card>
+        <app-meme-card *ngFor="let meme of memes | filter: searchText" [meme]="meme" (memeDelete)="getMemesAfterDelete($event)"> </app-meme-card>
     </div>
 </div>

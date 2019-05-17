@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Meme } from '../models/meme.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -23,9 +24,9 @@ export class MemeService {
     // return this.http.post<Meme>(this.url + '/kurec', formData).subscribe();
   }
 
-  deleteMeme(id: number) {
+  deleteMeme(id: number): Observable<any> {
     const deleteUrl = this.url + 'card/' + id;
     console.log('evala');
-    return this.http.delete(deleteUrl).subscribe();
+    return this.http.delete(deleteUrl);
   }
 }

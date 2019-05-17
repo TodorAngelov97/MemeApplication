@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MEMES } from '../../mock-memes';
 import { MemeService } from '../../services/meme.service';
 import { Meme } from '../../models/meme.model';
+import { Observable } from 'rxjs';
 
 
 //  import {MemeService} from '../../services/meme.service'
@@ -26,4 +27,15 @@ export class MemeGridComponent implements OnInit {
     this.memeService.getMemes().subscribe(memes => this.memes = memes);
   }
 
+
+  delete(id: number): Observable<any> {
+    console.log('delete successfully');
+    return this.memeService.deleteMeme(id);
+    // window.location.reload()
+  }
+
+  getMemesAfterDelete(id: number): void {
+    console.log('second stage');
+    this.delete(id).subscribe(() => this.getMemes());
+  }
 }

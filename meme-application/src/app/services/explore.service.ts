@@ -14,6 +14,11 @@ export class ExploreService {
     return this.http.get<Meme[]>(url + '/card');
   }
 
+  searchAdvanced(key: string) {
+    const url = 'http://localhost:8080';
+    const requestUrl = url + '/advanced-search/ ' + key;
+    return this.http.get<Meme[]>(requestUrl);
+  }
 
 }
 
