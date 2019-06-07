@@ -14,8 +14,8 @@ import java.util.List;
 @Configuration
 public class DomainService {
 
-    private final String URL = "http://localhost:8090/domain";
-//    private final String URL = "https://meme-it-platform-service-api.herokuapp.com/domain";
+//    private final String URL = "http://localhost:8090/domain";
+      private final String URL = "https://meme-it-platform-service-api.herokuapp.com/domain";
 
     private RestTemplate restTemplate;
 
