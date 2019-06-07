@@ -1,6 +1,6 @@
 
 
-#General
+# General
 
 Web app in which you upload and share mememes. The app can be accessed by multiple users 
 
@@ -27,9 +27,9 @@ DELETE /domain/deregister/:id?
 Description: Removes a domain from register by specifying id of the target domain
 
 
-##Main Application Components
+## Main Application Components
 
-#Home page
+### Home page
 
 Each meme includes  a button which coud be used to delete it.
 
@@ -39,26 +39,26 @@ Filtering by title which filter all memes that partially match the filter criter
 
 search for "abc" – give all memes which title contains "abc")
 
-#Create Meme Page 
+### Create Meme Page 
 
 Display a web form for meme creation.
 A meme has the following fields:
 Title(text)
 Image(file)
 
-#Edit meme page
+### Edit meme page
 
 This page should display a web form for editing a meme. It is the same form as in "Create
 Meme Page" but  prepopulated with the title of the meme which is about to be edited.
 In this form you can edit both title and image.
 
-#Explore Screen
+### Explore Screen
 
 It contains:
 • all available domains in a dropdown
 • all memes per selected domain
 
-#Explore Page
+### Explore Page
 
 Explore screen should contain:
 advanced search
