@@ -10,14 +10,19 @@ Display both local memes and memes created by other similar applications. In ord
 
 
 GET /domain
+
 Description: Returns all registered domains
+
 Response: List of all domain objects each having name and address.
 
 POST /domain/register
+
 Description: Adds a domain in the registry
+
 Body: A single object containing a human-readable name (describing the topic for the  majority of your memes) and an address of the backend endpoint which later on can be queried.
 
 DELETE /domain/deregister/:id?
+
 Description: Removes a domain from register by specifying id of the target domain
 
 
