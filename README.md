@@ -9,7 +9,7 @@ Display both local memes and memes created by other similar applications. In ord
 “Meme Application” instances.
 
 
-- **GET /domain **
+- **GET /domain**
 
 Description: Returns all registered domains
 
